@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicii – Alina Mates – Consiliere personală</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .servicii-hero {
+            padding: 120px 0 80px;
+            background-color: #fff;
+        }
+
+        .servicii-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .servicii-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .servicii-content .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            color: #000;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .servicii-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #445c27;
+        }
+
+        .servicii-image img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+
+        /* Second section reversal */
+        .servicii-grid.reverse {
+            grid-template-areas: "image content";
+        }
+
+        .servicii-grid.reverse .servicii-image {
+            grid-area: image;
+        }
+
+        .servicii-grid.reverse .servicii-content {
+            grid-area: content;
+            padding-left: 40px;
+        }
+
+        .eliberare-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .eliberare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .steps-section {
+            padding: 80px 0;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .step-item {
+            padding: 20px;
+        }
+
+        .step-icon {
+            margin-bottom: 25px;
+            color: #000;
+        }
+
+        .step-icon svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .step-item h5 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .step-item p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #445c27;
+        }
+
+        .cta-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 991px) {
+
+            .servicii-grid,
+            .eliberare-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .servicii-grid.reverse {
+                grid-template-areas: unset;
+            }
+
+            .servicii-grid.reverse .servicii-content {
+                padding-left: 0;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="subpage">
+    <header id="header-placeholder"></header>
+
+    <main>
+        <section class="servicii-hero">
+            <div class="container overflow-hidden">
+                <div class="servicii-grid">
+                    <div class="servicii-content" data-aos="fade-right">
+                        <h2><mark>Cu ce te pot ajuta</mark></h2>
+                        <span class="subtitle"><mark>timp, spațiu, stare de bine</mark></span>
+                        <p><strong>Știu cât de dificil este să trăiești într-o lume care nu te acceptă așa cum ești,
+                                care îți cere mereu să te conformezi, care îți impune reguli și care are așteptări, care
+                                nu îți apreciază unicitatea și autenticitatea.</strong></p>
+                        <p>De aceea, eu te invit într-un spațiu în care sunt alături de tine, te ascult cu atenție, te
+                            susțin cu drag și te îndrum. Îți ofer un spațiu unde să te simți bine cu tine, unde nu
+                            trebuie să te grăbești, să impresionezi, să dovedești, să lupți. <strong>Un spațiu în care
+                                să îți permiți să fii tu însuți</strong>, în care să putem aborda situațiile
+                            provocatoare de viață, în ritmul care ți se potrivește.</p>
+                    </div>
+                    <div class="servicii-image" data-aos="fade-left">
+                        <img src="assets/alina-mates_consiliere-personala_5.jpg" alt="Consiliere personală Alina Mateș">
+                    </div>
+                </div>
+
+                <div class="servicii-content text-center mb-5" data-aos="fade-up">
+                    <p>Beneficiezi de <strong>suport</strong> pentru a-ți dezvolta abilitățile proprii de gestionare a
+                        stresului, anxietății, furiei și altor emoții dificile. Beneficiezi de <strong>ghidaj și
+                            susținere</strong> în a-ți exprima potențialul, pentru o viață conștientă, autentică și
+                        împlinită.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="eliberare-section">
+            <div class="container overflow-hidden">
+                <div class="servicii-grid reverse">
+                    <div class="servicii-image" data-aos="fade-right">
+                        <img src="assets/alina-mates_programe.jpg" alt="Programe de cunoaștere">
+                    </div>
+                    <div class="servicii-content" data-aos="fade-left">
+                        <h2><mark>A te cunoaște mai bine</mark></h2>
+                        <span class="subtitle"><mark>emoții, comportamente, nevoi</mark></span>
+                        <p>A te cunoaște pe tine mai bine înseamnă a-ți explora și a-ți înțelege propriile emoții,
+                            gânduri, valori, motivații, comportamente și nevoi.</p>
+                        <ul class="custom-list">
+                            <li>Sunt aici pentru a te sprijini în a-ți atinge obiectivele și a-ți îmbunătăți calitatea
+                                vieții.</li>
+                            <li>Beneficiezi de sprijin pentru a-ți identifica și comunica emoțiile.</li>
+                            <li>Îți dezvolți capacitatea de a-ți asculta propriile sentimente, nevoi și aspirații.</li>
+                            <li>Beneficiezi de sprijin pentru a-ți înțelege și asuma propriile comportamente, acțiuni și
+                                alegeri.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://wa.me/+40724570927" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                                    style="vertical-align: middle; margin-right: 8px;">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Contactează-mă
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="eliberare-section" style="background-color: #f7f7f7;">
+            <div class="container">
+                <div class="eliberare-grid">
+                    <div data-aos="fade-right">
+                        <h2><mark>Tehnica eliberării interioare conștiente</mark></h2>
+                        <p class="mt-4"><strong>Este o metodă care te ajută să te eliberezi de gândurile și emoțiile
+                                negative, precum și de credințele limitative care îți afectează viața.</strong> Prin
+                            această tehnică îți îmbunătățești starea de bine, îți crești încrederea în tine și faci pași
+                            pentru a-ți atinge obiectivele.</p>
+                    </div>
+                    <div data-aos="fade-left">
+                        <p>Prin intermediul tehnicii eliberării interioare conștiente te ajut să explorezi provocările
+                            cu care te confrunți și să găsești soluțiile adecvate pentru ele:</p>
+                        <ul class="custom-list">
+                            <li>aplicăm metoda pentru a putea schimba sau accepta factorii externi care influențează
+                                provocările tale</li>
+                            <li>aprofundăm sistemului tău de credințe, valori conștiente și inconștiente, pentru a
+                                elibera credințele limitative</li>
+                            <li>înveți să folosești tehnica singur pentru a recunoaște, exprima și elibera emoțiile,
+                                gândurile, comportamentele care te împiedică să fii fericit și să te bucuri de viață
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps-section">
+            <div class="container">
+                <div class="steps-grid">
+                    <div class="step-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 32C10 32 15 24 22 24C29 24 35 32 42 32C49 32 54 24 54 24"
+                                    stroke-linecap="round" />
+                                <path d="M10 40C10 40 15 32 22 32C29 32 35 40 42 40C49 40 54 32 54 32"
+                                    stroke-linecap="round" />
+                                <path d="M10 48C10 48 15 40 22 40C29 40 35 48 42 48C49 48 54 40 54 40"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h5>PASUL 1: clarifici cine ești și ce ai nevoie</h5>
+                        <p>- îți crești încrederea în tine, descoperindu-țicalitățile și punctele forte<br>
+                            - devii mai conștient de zonele tale de dezvoltare<br>
+                            - îți clarifici prioritățile, interesele și scopurile, pentru a lua decizii mai
+                            conștiente<br>
+                            - îți exprimi deschis personalitatea și înveți să fii autentic în relația cu tine și
+                            ceilalți</p>
+                    </div>
+                    <div class="step-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="32" cy="28" r="12" />
+                                <path d="M32 40V48" />
+                                <path d="M24 56H40" />
+                                <path d="M26 22L28 24M38 22L36 24M32 16V18" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h5>PASUL 2: îți îmbunătățești relațiile și adaptarea</h5>
+                        <p>- înveți să înțelegi mai bine emoțiile și nevoile tale, dar și pe ale celor din jur<br>
+                            - îți dezvolți empatia, comunicarea și cooperarea în relații<br>
+                            - îți crești capacitatea de adaptare în fața schimbărilor și provocărilor zilnice ale
+                            vieții<br>
+                            - devii mai flexibil, mai rezilient și mai echilibrat în interacțiuni</p>
+                    </div>
+                    <div class="step-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="32" cy="32" r="10" />
+                                <path
+                                    d="M32 12V18M32 46V52M12 32H18M46 32H52M18 18L22 22M42 42L46 46M18 46L22 42M42 18L46 22"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h5>PASUL 3: construiești o viață cu sens și echilibru</h5>
+                        <p>- îți descoperi pasiunile, talentele și sursele de motivație<br>
+                            - stimulezi creativitatea, curiozitatea și inovația personală<br>
+                            - gestionezi mai eficient stresul și emoțiile dificile, cultivând bunăstarea fizică și
+                            psihică<br>
+                            - faci alegeri mai aliniate cu cine ești și cu stilul de viață care ți se potrivește</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h3><mark>Hai să ne cunoaștem! Programează o ședință!</mark></h3>
+                <a href="index.html#contact" class="btn btn-primary">Programează o ședință!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

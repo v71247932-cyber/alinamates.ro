@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarife - Alina Mates - Consiliere personală</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .produse-hero {
+            padding: 120px 0 60px;
+            background-color: var(--bg-color);
+            text-align: center;
+        }
+
+        .produse-hero h1 {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            padding: 10px 30px;
+            border-radius: 12px;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            line-height: 1.4;
+            max-width: 900px;
+        }
+
+        .produse-hero p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .produse-hero p a {
+            color: var(--text-color);
+            text-decoration: underline;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .btn-discover {
+            background-color: #000;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-discover:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Cine sunt vs Cine nu sunt Section */
+        .comparison-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .comparison-header h2 {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            padding: 10px 40px;
+            border-radius: 12px;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .comparison-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .comparison-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-col ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .comparison-col ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .comparison-col strong {
+            display: block;
+            margin: 20px 0 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .produse-hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="produse-hero">
+            <div class="container">
+                <h1>Fă primul pas cu încredere. Nu trebuie să vezi întreagul drum. Pur și simplu pășește!</h1>
+                <p>Hai să ne cunoaștem! Programează acum <a href="index.html#programeaza">O ȘEDINȚĂ!</a></p>
+                <p>...alege ce ți se potrivește</p>
+
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="assets/hai-sa-ne-cunoastem-1.png" alt="Ședință consiliere personală">
+                        <h4>Ședință consiliere personală – 50 min</h4>
+                        <div class="product-price">150 lei</div>
+                        <a href="consiliere-personala.html" class="btn-discover">DESCOPERĂ</a>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="assets/vreau-sa-incerc.png" alt="Ședință consiliere extinsă one time">
+                        <h4>Ședință consiliere extinsă one time – 90 min</h4>
+                        <div class="product-price">250 lei</div>
+                        <a href="consiliere-personala.html" class="btn-discover">DESCOPERĂ</a>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="assets/vreau-sa-ma-cunosc-2.png" alt="Ședință consiliere de cuplu">
+                        <h4>Ședință consiliere de cuplu – 60 – 70 min</h4>
+                        <div class="product-price">200 lei</div>
+                        <a href="consiliere-de-cuplu.html" class="btn-discover">DESCOPERĂ</a>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="assets/alina-mates_situatie-criza.png" alt="Situație de criză">
+                        <h4>Situație de criză (1 ședință extinsă + 4 ședințe 50 min)</h4>
+                        <div class="product-price">800 lei</div>
+                        <a href="situatie-de-criza.html" class="btn-discover">DESCOPERĂ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <div class="container">
+                <div class="comparison-header">
+                    <h2>Cine sunt... vs. cine nu sunt...</h2>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-col">
+                        <h3>Cine sunt:</h3>
+                        <ul>
+                            <li><strong>consilier de dezvoltare personală</strong>, cu formare acreditată, și</li>
+                            <li><strong>psihoterapeut în formare</strong> (anul 3 din 5) în cadrul programului de
+                                psihoterapie integrativă (ACCPI - Timișoara).</li>
+                            <li>Lucrez cu adulți care își doresc claritate, autocunoaștere, echilibru emoțional și un
+                                spațiu sigur de reflecție și evoluție personală.</li>
+                        </ul>
+                        <strong>Ofer:</strong>
+                        <ul>
+                            <li>Sesiuni de consiliere de dezvoltare personală, centrate pe auto-cunoaștere, motivație,
+                                stima de sine, decizii personale, îmbunătățirea comunicării si a relațiilor.</li>
+                            <li>Spațiu de reflecție empatic și ghidaj blând pentru clarificarea blocajelor interioare.
+                            </li>
+                            <li>Sprijin în descoperirea resurselor proprii și dezvoltarea inteligenței emoționale.</li>
+                            <li>Instrumente și exerciții.</li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-col">
+                        <h3>Cine nu sunt:</h3>
+                        <ul>
+                            <li>Nu sunt psiholog clinician.</li>
+                            <li>Nu sunt încă psihoterapeut cu drept de practică independentă.</li>
+                            <li>Nu ofer servicii de diagnostic psihologic sau psihopatologic.</li>
+                            <li>Nu tratez tulburări clinice sau afecțiuni psihice.</li>
+                        </ul>
+                        <strong>Nu ofer:</strong>
+                        <ul>
+                            <li>Nu evaluez starea psihică a clienților și nu aplic teste psihologice.</li>
+                            <li>Nu pun diagnostice psihologice.</li>
+                            <li>Nu emit rapoarte, evaluări sau avize oficiale.</li>
+                            <li>Nu ofer intervenție asupra tulburărilor psihice.</li>
+                            <li>Nu lucrez cu copii sau adolescenți.</li>
+                            <li>Dacă situația o cere fac recomandări și redirecționez către specialiști.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
