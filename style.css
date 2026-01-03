@@ -1346,6 +1346,40 @@ mark::after,
     color: #000;
 }
 
+/* Legal Pages Styling */
+.legal-content-page {
+    padding-top: 140px;
+    padding-bottom: 80px;
+}
+
+.legal-text {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.legal-text h4,
+.legal-text h5 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.legal-text p {
+    margin-bottom: 1.2rem;
+}
+
+.legal-text ul,
+.legal-text ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.legal-text li {
+    margin-bottom: 0.5rem;
+}
+
 /* Hero Slider - Reference Image Layout */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
 
