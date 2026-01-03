@@ -1,1 +1,2 @@
-Redirect 301 /product-category/2/ /servicii.html
+RewriteEngine On
+RewriteRule ^product-category/2/?$ /servicii.html [R=301,L]
