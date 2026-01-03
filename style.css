@@ -101,7 +101,7 @@ img {
 .btn-primary {
     background-color: #445c27;
     color: var(--background-white);
-    padding: 10px 24px;
+    padding: 6px 10px;
 }
 
 .btn-primary:hover {
