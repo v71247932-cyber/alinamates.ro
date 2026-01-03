@@ -223,7 +223,8 @@ img {
     display: flex;
     align-items: center;
     background-color: var(--background-color);
-    padding-top: 130px;
+    padding-top: 150px;
+    /* Increased for better clearance */
     padding-bottom: 60px;
 }
 
@@ -1413,8 +1414,8 @@ mark::after,
     position: relative;
     height: 700px;
     width: 80%;
-    margin: 80px auto 0;
-    /* Centered horizontally, space for fixed header */
+    margin: 110px auto 0;
+    /* Increased to prevent overlap with fixed header */
     overflow: hidden;
     display: flex;
     background-color: #fff;
