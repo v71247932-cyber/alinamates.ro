@@ -1,33 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Redirect /product-category/2/ to /servicii.html
-    if (window.location.pathname.includes('/product-category/2/')) {
-        window.location.replace('/servicii.html');
-        return; 
-    }
-    // Mobile Navigation Toggle
+    // --- Navigation Initialization (Consolidated) ---
+    const header = document.querySelector('.header');
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    if (hamburger) {
+    if (hamburger && nav) {
+        // Mobile Menu Toggle
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('active');
             hamburger.classList.toggle('open');
         });
-    }
 
-    // Close mobile menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('active')) {
+        // Close mobile menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
                 nav.classList.remove('active');
                 hamburger.classList.remove('open');
+            });
+        });
+    }
+
+    // Sticky Header
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
+    }
+
+    // --- Active Link and Scroll Logic ---
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split('#')[0] || 'index.html';
+        const linkHash = '#' + (link.getAttribute('href').split('#')[1] || '');
+
+        if (currentPath === 'despre.html' && link.dataset.page === 'despre.html') {
+            link.classList.add('active');
+        } else if (currentPath === 'servicii.html' && link.dataset.page === 'servicii.html') {
+            link.classList.add('active');
+        } else if (currentPath === 'produse.html' && link.dataset.page === 'produse.html') {
+            link.classList.add('active');
+        } else if (link.getAttribute('href').includes('index.html#servicii') &&
+            (currentPath.includes('consiliere') || currentPath.includes('situatie'))) {
+            link.classList.add('active');
+        }
     });
 
-    // Smooth Scroll for Anchor Links (Polyfill for older browsers implicitly handled by css, but good for dynamic offset)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth Scroll and Scroll Spy (mostly for index.html)
+    if (currentPath === 'index.html' || currentPath === '' || currentPath === '/') {
+        navLinks.forEach(link => {
+            const targetId = link.getAttribute('href').split('#')[1];
+            if (targetId) {
+                link.addEventListener('click', (e) => {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            }
+        });
+
+        // Scroll Spy
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 150; // Increased offset for better spy
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const linkHash = link.getAttribute('href').split('#')[1];
+                if (linkHash === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // Generic Smooth Scroll for internal links (other than nav)
+    document.querySelectorAll('a[href^="#"]:not(.nav-link)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
@@ -35,10 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Account for fixed header height
-                let headerOffset = 100; // Increased for more breathing room
+                let headerOffset = 100;
                 if (targetId === '#servicii' || targetId === '#programeaza') {
-                    headerOffset = -20; // Adjusted for better section framing
+                    headerOffset = -20;
                 }
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -50,138 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Load Header
-    async function loadHeader() {
-        const headerPlaceholder = document.getElementById('header-placeholder');
-        if (!headerPlaceholder) return;
-
-        try {
-            const response = await fetch('header.html');
-            const data = await response.text();
-            headerPlaceholder.innerHTML = data;
-            initializeNavigation();
-        } catch (error) {
-            console.error('Error loading header:', error);
-        }
-    }
-
-    // Load Footer
-    async function loadFooter() {
-        const footerPlaceholder = document.getElementById('contact');
-        if (!footerPlaceholder) return;
-
-        try {
-            const response = await fetch('footer.html');
-            const data = await response.text();
-            footerPlaceholder.innerHTML = data;
-        } catch (error) {
-            console.error('Error loading footer:', error);
-        }
-    }
-
-
-
-    function initializeNavigation() {
-        const header = document.querySelector('.header');
-        const hamburger = document.querySelector('.hamburger');
-        const nav = document.querySelector('.nav');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        // Sticky Header
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile Menu
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                nav.classList.toggle('active');
-            });
-        }
-
-        // Close mobile menu on link click
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        });
-
-        // Handle Active Link and Scroll
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const currentHash = window.location.hash;
-
-        navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href').split('#')[0] || 'index.html';
-            const linkHash = '#' + (link.getAttribute('href').split('#')[1] || '');
-
-            if (currentPath === 'despre.html' && link.dataset.page === 'despre.html') {
-                link.classList.add('active');
-            } else if (currentPath === 'servici.html' && link.dataset.page === 'servici.html') {
-                link.classList.add('active');
-            } else if (currentPath === 'produse.html' && link.dataset.page === 'produse.html') {
-                link.classList.add('active');
-            } else if (currentPath === 'index.html' || currentPath === '') {
-                // Active based on scroll handled below
-            } else if (link.getAttribute('href').includes('index.html#servicii') &&
-                (currentPath.includes('consiliere') || currentPath.includes('situatie'))) {
-                link.classList.add('active');
-            }
-        });
-
-        // Smooth Scroll for index.html
-        if (currentPath === 'index.html' || currentPath === '') {
-            navLinks.forEach(link => {
-                const targetId = link.getAttribute('href').split('#')[1];
-                if (targetId) {
-                    link.addEventListener('click', (e) => {
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            e.preventDefault();
-                            const headerHeight = header.offsetHeight;
-                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                            // Update URL without jump
-                            history.pushState(null, null, `#${targetId}`);
-                        }
-                    });
-                }
-            });
-
-            // Scroll Spy
-            window.addEventListener('scroll', () => {
-                let current = '';
-                const sections = document.querySelectorAll('section[id]');
-                const headerHeight = header.offsetHeight;
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - headerHeight - 100;
-                    if (window.pageYOffset >= sectionTop) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    const linkHash = link.getAttribute('href').split('#')[1];
-                    if (linkHash === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        }
-    }
-
-    loadHeader();
-
-    loadFooter();
 
     // Scroll Animations
     const observerOptions = {

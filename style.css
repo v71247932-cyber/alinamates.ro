@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
-    --primary-color: #25606E;
-    /* Teal */
+    --primary-color: #445c27;
+    /* Green from servicii.html */
     --secondary-color: #e6e2d6;
     /* Beige Border/Divider */
     --accent-color: #d5bd99;
@@ -87,7 +87,7 @@ img {
 .btn {
     display: inline-block;
     padding: 14px 34px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     /* Pill-shaped */
     font-weight: 600;
     text-transform: uppercase;
@@ -99,7 +99,7 @@ img {
 }
 
 .btn-primary {
-    background-color: #494343;
+    background-color: #000000;
     color: var(--background-white);
 }
 
@@ -358,6 +358,12 @@ img {
     /* Use full container width */
     margin: 0 auto;
     text-align: left;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
 }
 
 .about-img {
@@ -1335,6 +1341,26 @@ mark::after,
     display: none;
 }
 
+/* Subtitle Script Styling for despre.html */
+.subtitle-script {
+    font-family: 'Dancing Script', Arial, Tahoma, sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #000;
+    margin-bottom: 25px;
+
+}
+
+.subtitle-script mark {
+    background-color: var(--accent-color);
+    padding: 2px 20px;
+    border-radius: 20px;
+    color: inherit;
+    display: inline-block;
+}
+
 
 /* Utility Class for Script Font */
 .script-font,
@@ -1385,27 +1411,31 @@ mark::after,
 
 .hero-custom {
     position: relative;
-    height: 600px;
-    width: 100%;
+    height: 700px;
+    width: 80%;
+    margin: 80px auto 0;
+    /* Centered horizontally, space for fixed header */
     overflow: hidden;
     display: flex;
     background-color: #fff;
+    justify-content: center;
 }
 
 .hero-bg {
     position: absolute;
-    padding-top: 130px;
-    top: 80px;
-    /* Offset for header */
+    top: 30px;
+    /* Reduced offset for longer look */
     right: 50px;
-    /* Space on the right */
-    width: 35%;
-    /* Image takes right 60% */
-    height: calc(100% - 0px);
-    /* Adjust height to account for offset */
+    width: 42%;
+    /* Increased width to be closer to text */
+    height: calc(100% - 30px);
+    /* Calculated height for vertical centering/breathing room */
     background-image: url('assets/portrait.jpg');
     background-size: cover;
     background-position: center;
+    border-radius: 20px;
+    /* Added rounded corners like in despre.html */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
@@ -1418,8 +1448,8 @@ mark::after,
     flex-direction: column;
     justify-content: center;
     padding-left: 40px;
-    padding-top: 220px;
-    /* Account for fixed header */
+    padding-top: 150px;
+    /* Adjusted for taller hero alignment */
     z-index: 10;
 }
 
@@ -1539,4 +1569,95 @@ mark::after,
     .hero-desc {
         max-width: 100%;
     }
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+/* Custom Accordion for despre.html FAQ */
+.faq-container-manual {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.faq-container-manual .heading {
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.custom-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    border-color: var(--primary-color);
+}
+
+.accordion-item.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: #fdfaf6;
+}
+
+.accordion-header .icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.accordion-body {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #666;
+    line-height: 1.6;
+}
+
+.accordion-item.active .accordion-body {
+    padding: 0 20px 20px;
+    max-height: 1000px;
+    /* Increased to accommodate content */
 }
