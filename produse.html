@@ -39,67 +39,7 @@
             text-decoration: underline;
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 40px 0;
-        }
 
-        .product-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .product-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: var(--text-color);
-            height: 3em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-price {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-color);
-            margin-bottom: 20px;
-        }
-
-        .btn-discover {
-            background-color: #000;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-discover:hover {
-            background-color: var(--secondary-color);
-        }
 
         /* Cine sunt vs Cine nu sunt Section */
         .comparison-section {
@@ -173,48 +113,14 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+    <header id="header-placeholder" class="header"></header>
 
     <main>
         <section class="produse-hero">
             <div class="container">
                 <h1>Fă primul pas cu încredere. Nu trebuie să vezi întreagul drum. Pur și simplu pășește!</h1>
                 <p>Hai să ne cunoaștem! Programează acum <a href="index.html#programeaza">O ȘEDINȚĂ!</a></p>
-                <p>...alege ce ți se potrivește</p>
 
-                <div class="products-grid">
-                    <!-- Product 1 -->
-                    <div class="product-card">
-                        <img src="assets/hai-sa-ne-cunoastem-1.png" alt="Ședință consiliere personală">
-                        <h4>Ședință consiliere personală – 50 min</h4>
-                        <div class="product-price">150 lei</div>
-                        <a href="consiliere-personala.html" class="btn-discover">DESCOPERĂ</a>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="product-card">
-                        <img src="assets/vreau-sa-incerc.png" alt="Ședință consiliere extinsă one time">
-                        <h4>Ședință consiliere extinsă one time – 90 min</h4>
-                        <div class="product-price">250 lei</div>
-                        <a href="consiliere-personala.html" class="btn-discover">DESCOPERĂ</a>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="product-card">
-                        <img src="assets/vreau-sa-ma-cunosc-2.png" alt="Ședință consiliere de cuplu">
-                        <h4>Ședință consiliere de cuplu – 60 – 70 min</h4>
-                        <div class="product-price">200 lei</div>
-                        <a href="consiliere-de-cuplu.html" class="btn-discover">DESCOPERĂ</a>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="product-card">
-                        <img src="assets/alina-mates_situatie-criza.png" alt="Situație de criză">
-                        <h4>Situație de criză (1 ședință extinsă + 4 ședințe 50 min)</h4>
-                        <div class="product-price">800 lei</div>
-                        <a href="situatie-de-criza.html" class="btn-discover">DESCOPERĂ</a>
-                    </div>
-                </div>
             </div>
         </section>
 

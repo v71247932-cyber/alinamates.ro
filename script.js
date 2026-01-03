@@ -75,20 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Load Forum
-    async function loadForum() {
-        const forumPlaceholder = document.getElementById('intrebari');
-        if (!forumPlaceholder) return;
 
-        try {
-            const response = await fetch('forum.html');
-            const data = await response.text();
-            forumPlaceholder.innerHTML = data;
-            initializeForum();
-        } catch (error) {
-            console.error('Error loading forum:', error);
-        }
-    }
 
     function initializeNavigation() {
         const header = document.querySelector('.header');
@@ -127,9 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const linkPath = link.getAttribute('href').split('#')[0] || 'index.html';
             const linkHash = '#' + (link.getAttribute('href').split('#')[1] || '');
 
-            if (currentPath === 'intrebari.html' && link.dataset.page === 'intrebari.html') {
-                link.classList.add('active');
-            } else if (currentPath === 'despre.html' && link.dataset.page === 'despre.html') {
+            if (currentPath === 'despre.html' && link.dataset.page === 'despre.html') {
                 link.classList.add('active');
             } else if (currentPath === 'servici.html' && link.dataset.page === 'servici.html') {
                 link.classList.add('active');
@@ -190,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     loadHeader();
-    loadForum();
+
     loadFooter();
 
     // Scroll Animations
@@ -355,86 +340,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Q&A Forum Logic (Footer Integration)
-    function initializeForum() {
-        const questionsContainer = document.getElementById('questionsContainer');
-        const forumForm = document.getElementById('forumForm');
 
-        async function loadQuestions() {
-            if (!questionsContainer) return;
-            try {
-                const response = await fetch('intrebari/ia_intrebari.php');
-                const questions = await response.json();
-
-                if (questions.length === 0) {
-                    questionsContainer.innerHTML = '<p class="no-data">Nu există întrebări momentan. Fii prima persoană care pune o întrebare!</p>';
-                    return;
-                }
-
-                questionsContainer.innerHTML = questions.map(q => `
-                    <div class="qa-item animate-init">
-                        <div class="qa-question">
-                            <span class="qa-label">Întrebare Anonimă:</span>
-                            <p>${q.question}</p>
-                            <span class="qa-date">${new Date(q.timestamp).toLocaleDateString('ro-RO')}</span>
-                        </div>
-                        ${q.answer ? `
-                            <div class="qa-answer">
-                                <span class="qa-label">Răspuns Alina Mateș:</span>
-                                <p>${q.answer}</p>
-                            </div>
-                        ` : '<div class="qa-no-answer">Așteaptă răspuns...</div>'}
-                    </div>
-                `).join('');
-
-                if (window.initializeAnimations) window.initializeAnimations();
-            } catch (err) {
-                questionsContainer.innerHTML = '<p class="error">Eroare la încărcarea întrebărilor.</p>';
-            }
-        }
-
-        if (forumForm) {
-            forumForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const questionElement = document.getElementById('forumQuestion');
-                const feedback = document.getElementById('forumFeedback');
-                const submitBtn = forumForm.querySelector('button');
-
-                if (!questionElement || !feedback) return;
-
-                const question = questionElement.value;
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Se trimite...';
-
-                try {
-                    const response = await fetch('intrebari/salveaza_intrebare.php', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ question })
-                    });
-
-                    if (response.ok) {
-                        forumForm.reset();
-                        feedback.textContent = 'Întrebarea ta a fost postată!';
-                        feedback.className = 'form-feedback success';
-                        feedback.style.display = 'block';
-                        loadQuestions();
-                    } else {
-                        throw new Error();
-                    }
-                } catch (err) {
-                    feedback.textContent = 'Eroare. Încearcă din nou.';
-                    feedback.className = 'form-feedback error';
-                    feedback.style.display = 'block';
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Postează Anonim';
-                }
-            });
-        }
-
-        if (questionsContainer) {
-            loadQuestions();
-        }
-    }
 });
