@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Redirect /product-category/2/ to /servicii.html
+    if (window.location.pathname.includes('/product-category/2/')) {
+        window.location.replace('/servicii.html');
+        return; 
+    }
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
