@@ -1662,3 +1662,73 @@ mark::after,
     max-height: 1000px;
     /* Increased to accommodate content */
 }
+
+/* Psychologist Q&A Section */
+.psychologist-qa {
+    background-color: var(--background-color);
+}
+
+.qa-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.qa-item {
+    background: var(--background-white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.qa-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-color);
+}
+
+.qa-question {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.qa-question strong {
+    color: var(--primary-color);
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.qa-answer {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.qa-answer strong {
+    color: var(--primary-color);
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1.05rem;
+}
+
+/* Responsive adjustments for Q&A section */
+@media (max-width: 768px) {
+    .qa-item {
+        padding: 20px;
+    }
+    
+    .qa-question,
+    .qa-answer {
+        font-size: 0.95rem;
+    }
+}
