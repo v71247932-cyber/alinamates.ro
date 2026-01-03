@@ -180,7 +180,12 @@
             }
 
             .servicii-grid.reverse {
-                grid-template-areas: unset;
+                grid-template-areas: none;
+            }
+
+            .servicii-grid.reverse .servicii-image,
+            .servicii-grid.reverse .servicii-content {
+                grid-area: auto;
             }
 
             .servicii-grid.reverse .servicii-content {
@@ -252,7 +257,7 @@
             <div class="container overflow-hidden">
                 <div class="servicii-grid reverse">
                     <div class="servicii-image" data-aos="fade-right">
-                        <img src="assets/alina-mates_programe.jpg" alt="Programe de cunoaștere">
+                        <img src="assets/alina-mates_consiliere-personala_23.jpg" alt="Programe de cunoaștere">
                     </div>
                     <div class="servicii-content" data-aos="fade-left">
                         <h2><mark>A te cunoaște mai bine</mark></h2>

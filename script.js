@@ -4,22 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navOverlay = document.getElementById('nav-overlay');
+    const navClose = document.getElementById('nav-close');
 
-    if (hamburger && nav) {
-        // Mobile Menu Toggle
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('open');
-        });
-
-        // Close mobile menu on link click
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                hamburger.classList.remove('open');
-            });
-        });
+    function closeMenu() {
+        if (hamburger) hamburger.classList.remove('open');
+        if (nav) nav.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
     }
+
+    function toggleMenu() {
+        if (hamburger) hamburger.classList.toggle('open');
+        if (nav) nav.classList.toggle('active');
+        if (navOverlay) navOverlay.classList.toggle('active');
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+    }
+
+    if (navClose) {
+        navClose.addEventListener('click', closeMenu);
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 
     // Sticky Header
     if (header) {
@@ -290,5 +305,34 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.textContent = item.classList.contains('active') ? '-' : '+';
         });
     });
+
+    // Load More / Show Less functionality for Psychologist Q&A
+    const loadMoreBtn = document.getElementById('qa-load-more');
+    const showLessBtn = document.getElementById('qa-show-less');
+
+    if (loadMoreBtn && showLessBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            const hiddenItems = document.querySelectorAll('.qa-hidden');
+            hiddenItems.forEach(item => {
+                item.style.display = 'block';
+                // Optional: Insert a small timeout or class addition for fade-in effect if CSS allows
+                setTimeout(() => item.style.opacity = '1', 10);
+            });
+            loadMoreBtn.style.display = 'none';
+            showLessBtn.style.display = 'inline-block';
+        });
+
+        showLessBtn.addEventListener('click', () => {
+            const hiddenItems = document.querySelectorAll('.qa-hidden');
+            hiddenItems.forEach(item => {
+                item.style.display = 'none';
+                item.style.opacity = '0'; // Reset opacity for fade-in next time
+            });
+            showLessBtn.style.display = 'none';
+            loadMoreBtn.style.display = 'inline-block';
+
+            // Optional: Scroll slightly up if needed, but for now just toggle
+        });
+    }
 
 });

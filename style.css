@@ -638,31 +638,128 @@ img {
         font-size: 2.5rem;
     }
 
-    .nav {
-        display: none;
-        /* Hide nav on tablet/mobile initially */
-        position: absolute;
-        top: 100%;
+    /* Mobile Navigation Redesign */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: var(--background-white);
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Dark dimming overlay */
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        backdrop-filter: blur(2px);
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        /* Further reduced width */
+        max-width: 240px;
+        /* Further reduced max-width */
+        height: 100vh;
+        background-color: rgb(25, 25, 25);
+        /* Requested color */
+        padding: 100px 30px 40px;
+        /* Slightly reduced padding */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1001;
+        /* Above overlay */
+        overflow-y: auto;
     }
 
     .nav.active {
-        display: block;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        color: #fff;
+        cursor: pointer;
+        padding: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-close:hover {
+        transform: rotate(90deg);
     }
 
     .nav-list {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding-top: 10px;
+        align-items: flex-start;
+        gap: 5px;
+        /* Spacing handled by padding */
+        width: 100%;
+        margin-bottom: auto;
+    }
+
+    .nav-link {
+        color: #ffffff;
+        font-size: 0.95rem;
+        /* Sleek, not too huge */
+        font-weight: 500;
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+        border-bottom: none;
+        /* No borders in screenshot */
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        /* Airy spacing */
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #d5bd99;
+        /* Gold accent */
+        padding-left: 0;
+        /* Keep alignment strict */
     }
 
     .hamburger {
         display: block;
+        position: relative;
+        z-index: 999;
+        /* Below overlay so overlay covers it/site */
+    }
+
+    /* Social Icons in Nav */
+    .social-links-nav {
+        display: flex !important;
+        gap: 25px;
+        margin-top: 50px;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .social-links-nav a {
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+    }
+
+    .social-links-nav a:hover {
+        color: #fff;
+    }
+
+    .social-links-nav svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -1106,6 +1203,11 @@ select {
     color: var(--text-light);
     font-size: 0.9rem;
     padding-left: 20px;
+}
+
+#qa-load-more,
+#qa-show-less {
+    padding: 14px 34px;
 }
 
 .no-data {
@@ -1556,23 +1658,40 @@ mark::after,
     }
 }
 
+/* Mobile Hero Image */
+.hero-bg-mobile {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .hero-custom {
         height: auto;
         min-height: 500px;
         flex-direction: column;
+        margin-top: 90px;
+        margin-bottom: 50px;
+        /* Added spacing */
     }
 
     .hero-bg {
-        position: relative;
-        width: 100%;
-        height: 300px;
+        display: none;
+    }
+
+    .hero-bg-mobile {
+        display: block;
+        width: 85%;
+        height: auto;
+        margin: 30px auto 10px auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         order: 2;
     }
 
     .hero-content-layer {
-        padding: 40px 20px;
+        padding: 40px 20px 0 20px;
         order: 1;
+        text-align: center;
+        /* Center text on mobile */
     }
 
     .hero-text-block {
@@ -1581,6 +1700,25 @@ mark::after,
 
     .hero-desc {
         max-width: 100%;
+        margin: 0 auto 30px auto;
+        /* Center desc */
+    }
+
+    .hero-text-container {
+        margin: 0 auto 30px auto;
+    }
+
+    /* About Content Responsive */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+        /* Generally better for mobile single col */
+    }
+
+    .about-content.reverse .about-image {
+        order: -1;
+        /* Image first on mobile usually looks good, or remove to keep text first */
     }
 }
 
