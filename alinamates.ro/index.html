@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        // Inline Redirect Logic - Handles redirects before other assets load
+        (function () {
+            var path = window.location.pathname;
+            if (path.includes('/product-category/2/')) {
+                window.location.replace('/servicii.html');
+            } else if (path.includes('/produsele-noastre/')) {
+                window.location.replace('/produse.html');
+            } else if (path.includes('/contact/')) {
+                window.location.replace('/index.html#contact');
+            }
+        })();
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <title>Alina Mates – Consiliere Personală și de Cuplu Timișoara | Online</title>
+    <meta name="description"
+        content="Consiliere personală, de cuplu și situații de criză în Timișoara și online. Descoperă-ți potențialul și construiește o viață plină de sens cu Alina Mates, consilier profesionist.">
+    <meta name="keywords"
+        content="consiliere personală Timișoara, consiliere de cuplu Timișoara, consilier psihologic online, psihoterapeut Timișoara, consiliere criză">
+    <meta name="author" content="Alina Mates">
+    <link rel="canonical" href="https://alinamates.ro/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alinamates.ro/">
+    <meta property="og:title" content="Alina Mates – Consiliere Personală și de Cuplu Timișoara">
+    <meta property="og:description"
+        content="Consiliere personală, de cuplu și situații de criză în Timișoara și online. Descoperă-ți potențialul cu Alina Mates.">
+    <meta property="og:image" content="https://alinamates.ro/assets/portrait.jpg">
+    <meta property="og:locale" content="ro_RO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://alinamates.ro/">
+    <meta name="twitter:title" content="Alina Mates – Consiliere Personală și de Cuplu Timișoara">
+    <meta name="twitter:description"
+        content="Consiliere personală, de cuplu și situații de criză în Timișoara și online.">
+    <meta name="twitter:image" content="https://alinamates.ro/assets/portrait.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Alina Mates - Consiliere Personală",
+      "image": "https://alinamates.ro/assets/portrait.jpg",
+      "description": "Servicii de consiliere personală, de cuplu și situații de criză în Timișoara și online",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Timișoara",
+        "addressCountry": "RO"
+      },
+      "telephone": "+40724570927",
+      "email": "hello@alinamates.ro",
+      "url": "https://alinamates.ro",
+      "priceRange": "150-800 RON",
+      "areaServed": ["Timișoara", "România"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicii de Consiliere",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consiliere Personală",
+              "description": "Ședință individuală de 50 minute pentru dezvoltare personală și autocunoaștere",
+              "provider": {
+                "@type": "Person",
+                "name": "Alina Mates"
+              }
+            },
+            "price": "150",
+            "priceCurrency": "RON"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consiliere de Cuplu",
+              "description": "Ședință de cuplu de 70 minute pentru îmbunătățirea relației",
+              "provider": {
+                "@type": "Person",
+                "name": "Alina Mates"
+              }
+            },
+            "price": "200",
+            "priceCurrency": "RON"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Situație de Criză",
+              "description": "Pachet de 5 ședințe pentru situații de criză",
+              "provider": {
+                "@type": "Person",
+                "name": "Alina Mates"
+              }
+            },
+            "price": "800",
+            "priceCurrency": "RON"
+          }
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alina Mates",
+      "jobTitle": "Consilier Profesionist",
+      "url": "https://alinamates.ro",
+      "email": "hello@alinamates.ro",
+      "telephone": "+40724570927",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Timișoara",
+        "addressCountry": "RO"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Header -->
+    <header id="header-placeholder" class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Alina Mates Logo">
+            </a>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link" data-hash="#home">Home</a></li>
+                    <li><a href="despre.html" class="nav-link" data-page="despre.html">Despre</a></li>
+                    <li><a href="servicii.html" class="nav-link" data-page="servicii.html">Servicii</a></li>
+                    <li><a href="produse.html" class="nav-link" data-page="produse.html">Tarife</a></li>
+                    <li><a href="index.html#blog" class="nav-link" data-hash="#blog">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-hash="#contact">Contact</a></li>
+                </ul>
+                <div class="social-links-nav" style="display: none;">
+                    <a href="https://www.facebook.com/profile.php?id=61554120921375" target="_blank"
+                        aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/alina_mates_consiliere/" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/+40724570927" target="_blank" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+            <a href="index.html#programeaza" class="btn btn-primary">Începe azi</a>
+            <div class="hamburger">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section id="home" class="hero-custom">
+        <div class="hero-bg"></div>
+        <img src="assets/portrait.jpg" class="hero-bg-mobile" alt="Alina Mates">
+
+        <div class="container hero-content-layer">
+            <div class="hero-text-container">
+                <div class="hero-text-block block-2">
+                    Cel mai potrivit
+                </div>
+                <div class="hero-text-block block-3">
+                    moment este acum
+                </div>
+                <div class="hero-text-block block-1">
+                    ...schimbă-ți viața!
+                </div>
+            </div>
+
+            <div class="hero-desc">
+                <p>Vino alături de mine într-un program de consiliere personala, în care vei descoperi cum să îți
+                    schimbi viața prin cunoaștere și dezvoltare personală.</p>
+                <p>AMINTEȘTE-ȚI: fiecare persoană este responsabilă pentru propria evoluție și fericire.</p>
+            </div>
+
+            <div class="hero-action">
+                <a href="#programeaza" class="btn-rev">Începe azi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Situations Section -->
+    <section id="blog" class="section situations bg-light">
+        <div class="container">
+            <h2 class="section-title text-center animate-init"><mark>Când să apelezi la consiliere?</mark></h2>
+            <div class="situations-grid">
+                <div class="situation-item animate-init delay-100">
+                    <img src="assets/blog-alina-mates_iubirea-de-sine.jpg" alt="Iubirea de sine" class="situation-img">
+                    <h4>Vrei să te cunoști mai bine</h4>
+                    <p>Să te descoperi, să te înțelegi, să îți îmbunătățești încrederea în sine.</p>
+                </div>
+                <div class="situation-item animate-init delay-100">
+                    <img src="assets/alina-mates_consiliere-personala_echilibru-interior.jpg" alt="Echilibru interior"
+                        class="situation-img">
+                    <h4>Treci printr-o perioadă de criză</h4>
+                    <p>Întâmpini o dificultate majoră care îți tulbură liniștea și îți influențează negativ viața.</p>
+                </div>
+                <div class="situation-item animate-init delay-200">
+                    <img src="assets/articol-blog-1_adevarul-interior.jpg" alt="Adevărul interior"
+                        class="situation-img">
+                    <h4>Ai nevoie de îndrumare</h4>
+                    <p>Într-o situație provocatoare, pentru a-ți defini situația, a-ți identifica și realiza scopurile.
+                    </p>
+                </div>
+                <div class="situation-item animate-init delay-200">
+                    <img src="assets/articol-blog-5_limite.jpg" alt="Limite" class="situation-img">
+                    <h4>Te simți debusolat</h4>
+                    <p>Simți că ești blocat, că nu mai ai claritate în gânduri sau în alegeri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="despre" class="section about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2 class="section-title animate-init"><mark>Momentul potrivit?</mark></h2>
+                <p class="animate-init delay-200">Hai să dăm la o parte cine ni s-a spus că suntem, ce am fost învățați
+                    că trebuie să fim și să facem. Suntem fericiți cu adevărat doar când ne descoperim sinele autentic,
+                    propria ființă, propriul adevăr.</p>
+                <p class="animate-init delay-200">Sunt aici pentru a te inspira să îți urmărești visurile și să îți
+                    depășești limitele. Te îndrum să îți folosești cunoștințele și abilitățile eficient, ca să îți
+                    construiești o viață plină de sens și fericire.</p>
+                <p class="animate-init delay-200">Emoțiile și realitatea noastră ne arată cine suntem deoarece nu vedem
+                    lumea așa cum este ea, ci așa cum suntem noi. Lumea noastră personală și lumea în care existăm pot
+                    fi modificate, dar nu prin intervenție exterioară, ci prin schimbare interioară.</p>
+                <div class="mt-4 animate-init delay-200">
+                    <a href="despre.html" class="btn btn-outline">Află mai multe despre mine</a>
+                </div>
+            </div>
+            <div class="about-image animate-init delay-200">
+                <img src="assets/alina-mates_programe-2.jpg" alt="Momentul potrivit" class="about-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicii" class="section services">
+        <div class="container">
+            <h2 class="section-title text-center"><mark>Alege ce ți se potrivește</mark></h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card animate-init">
+                    <img src="assets/service-personal.png" alt="Consiliere personală" class="service-card-img">
+                    <h3 class="service-title">Consiliere personală</h3>
+                    <p class="service-duration">Ședință de 50 de minute</p>
+                    <p class="service-price">150 RON</p>
+                    <a href="consiliere-personala.html" class="btn btn-outline">Detalii</a>
+                </div>
+                <!-- Service 2 (Featured) -->
+                <div class="service-card featured animate-init delay-200">
+                    <img src="assets/blog_alina-mates_header.jpg" alt="Situație de criză" class="service-card-img">
+                    <h3 class="service-title">Situație de criză</h3>
+                    <p class="service-duration">Ședință de 90 de minute</p>
+                    <p class="service-price">250 RON</p>
+                    <a href="situatie-de-criza.html" class="btn btn-outline">Detalii</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card  animate-init delay-100">
+                    <img src="assets/service-couple.png" alt="Consiliere de cuplu" class="service-card-img">
+                    <h3 class="service-title">Consiliere de cuplu</h3>
+                    <p class="service-duration">Ședință de 70 de minute</p>
+                    <p class="service-price">200 RON</p>
+                    <a href="consiliere-de-cuplu.html" class="btn btn-outline">Detalii</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-clone">
+        <div class="container">
+            <h2 class="section-title text-center"><mark>Fă primul pas cu încredere</mark></h2>
+            <div class="faq-container-manual">
+                <h4 class="heading">Întrebări frecvente</h4>
+                <div class="custom-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Care este diferența între consiliere personală și
+                            psihoterapie <span class="icon">+</span></button>
+                        <div class="accordion-body">
+                            <p><strong>Consilierea personală</strong> este orientată către rezolvarea problemelor
+                                specifice și actuale, oferind suport și îndrumare pentru a ajuta persoanele să
+                                navigheze prin dificultățile vieții...</p>
+                            <p><strong>Psihoterapia</strong>, pe de altă parte, este o intervenție mai profundă care
+                                poate include explorarea și modificarea modelelor comportamentale și a problemelor
+                                psihologice adânc înrădăcinate...</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Care este rolul consilierului? <span
+                                class="icon">+</span></button>
+                        <div class="accordion-body">
+                            <p>Consilierul are rolul de a crea un spațiu sigur și confidențial pentru client, de a-l
+                                <strong>accepta necondiționat</strong> și de a-l <strong>susține</strong> în
+                                procesul de schimbare.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Ce rol am eu ca și client în procesul de consiliere? <span
+                                class="icon">+</span></button>
+                        <div class="accordion-body">
+                            <p>Clientul are un rol activ și responsabil în procesul de consiliere. Acesta include
+                                sinceritatea, implicarea activă, realizarea exercițiilor propuse și asumarea
+                                responsabilității pentru schimbare.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Cât timp durează procesul de consiliere? <span
+                                class="icon">+</span></button>
+                        <div class="accordion-body">
+                            <p>Un program de consiliere în medie se desfășoară săptămânal și durează aproximativ o
+                                oră. Numărul de ședințe depinde de specificul și complexitatea provocărilor.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Cum pot să aleg un consilier potrivit pentru mine? <span
+                                class="icon">+</span></button>
+                        <div class="accordion-body">
+                            <p>Este important să simți o conexiune și o stare de confort cu persoana respectivă.
+                                Rezonanța personală este esențială pentru succesul procesului.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Psychologist Q&A Section -->
+    <section class="section psychologist-qa">
+        <div class="container">
+            <h2 class="section-title text-center"><mark>Întrebări și Răspunsuri</mark></h2>
+            <p class="text-center" style="margin-bottom: 3rem; color: var(--text-secondary);">Răspunsuri la întrebări
+                primite de la clienți</p>
+
+            <div class="qa-container">
+                <div class="qa-item">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> Atunci cand sunt la serviciu imi este frica sa spun ce gandesc ca sa nu
+                        deranjez pe nimeni. crezi ca voi putea vreodata sa am mai mult curaj?
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Este normal sa simti aceasta teama cand vrei sa fii placuta de
+                        toata lumea. o sa inveti cum sa iti spui parerea fara sa te simti vinovata si o sa vezi ca
+                        oamenii te vor aprecia mai mult.
+                    </div>
+                </div>
+
+                <div class="qa-item">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> Ma simt foarte singura chiar si cand stau cu familia mea la masa. oare
+                        de ce nu pot sa ma bucur de prezenta lor?
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Singuratatea in mijlocul familiei este foarte dureroasa si
+                        confuza. o sa exploram motivele pentru care te-ai inchis in tine si cum poti sa te reconectezi
+                        emotional cu cei dragi.
+                    </div>
+                </div>
+
+                <div class="qa-item">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> Nu pot sa ma odihnesc noaptea pentru ca ma gandesc mereu la ce am de
+                        facut a doua zi. exista vreo metoda sa scap de aceasta agitatie?
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Mintea ta incearca sa rezolve probleme chiar si cand ar trebui sa
+                        se relaxeze. o sa lucram la cateva tehnici care sa te ajute sa lasi grijile deoparte si sa ai un
+                        somn linistit.
+                    </div>
+                </div>
+
+                <div class="qa-item qa-hidden" style="display: none;">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> Am tot timpul senzatia ca o sa se intample ceva rau daca nu verific
+                        totul de doua ori. se poate scapa de acest obicei obositor?
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Nevoia asta de control vine adesea dintr-o nesiguranta mai
+                        profunda. o sa intelegem impreuna de unde vine frica si o sa inveti sa ai incredere ca lucrurile
+                        vor fi bine si fara sa verifici atat de mult.
+                    </div>
+                </div>
+
+                <div class="qa-item qa-hidden" style="display: none;">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> Imi este greu sa iau decizii si mereu intreb pe altii ce sa fac. crezi
+                        ca voi reusi sa fiu mai stapana pe mine?
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> E mai simplu cand altii decid, dar asta te face sa te simti
+                        neputincioasa. o sa iti descoperim propriile dorinte si o sa capeti increderea necesara sa alegi
+                        ce e mai bine pentru tine.
+                    </div>
+                </div>
+
+                <div class="qa-item qa-hidden" style="display: none;">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> Simt ca nu mai pot sa fac fata la tot ce se cere de la mine si sunt
+                        epuizata. cum sa ma opresc fara sa dezamagesc?
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Este chinuitor sa traiesti doar pentru a-i multumi pe altii. o sa
+                        invatam sa pui limite sanatoase si sa intelegi ca a avea grija de tine nu inseamna ca esti
+                        egoista.
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <button id="qa-load-more" class="btn btn-primary">Vezi mai mult</button>
+                <button id="qa-show-less" class="btn btn-primary" style="display: none;">Vezi mai puțin</button>
+            </div>
+        </div>
+    </section>
+    <!-- Appointment Section -->
+    <section id="programeaza" class="section appointment bg-light">
+        <div class="container appointment-container">
+            <div class="appointment-text animate-init">
+                <h2 class="section-title"><mark>Programează o ședință</mark></h2>
+                <p>Ești gata să faci primul pas către o viață mai echilibrată? Completează formularul și te voi contacta
+                    în cel mai scurt timp pentru a stabili detaliile.</p>
+                <div class="appointment-info">
+                    <p><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                            style="vertical-align: middle; margin-right: 10px;">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg> 0724 570 927</p>
+                    <p><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                            style="vertical-align: middle; margin-right: 10px;">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg> hello@alinamates.ro</p>
+                </div>
+            </div>
+            <div class="appointment-form-wrapper animate-init delay-100">
+                <form id="appointmentForm" class="appointment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nume Complet</label>
+                            <input type="text" id="name" name="name" class="form-control"
+                                placeholder="Ex: Popescu Ioana" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Număr Telefon</label>
+                            <input type="tel" id="phone" name="phone" class="form-control"
+                                placeholder="Ex: 07xx xxx xxx" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time">Momentul Zilei</label>
+                            <select id="time" name="time" class="form-control" required>
+                                <option value="" disabled selected>Alege...</option>
+                                <option value="dimineata">Prima parte a zilei</option>
+                                <option value="dupa-amiaza">A doua parte a zilei</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Când dorești programarea?</label>
+                            <select id="urgency" name="urgency" class="form-control" required>
+                                <option value="" disabled selected>Alege...</option>
+                                <option value="curand">Cât mai curând</option>
+                                <option value="saptamana-viitoare">Săptămâna viitoare</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="meeting_type">Tipul Întâlnirii</label>
+                            <select id="meeting_type" name="meeting_type" class="form-control" required>
+                                <option value="" disabled selected>Alege...</option>
+                                <option value="online">Online</option>
+                                <option value="fizic">Fizic (în Timișoara)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Tipul de Consiliere</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="" disabled selected>Alege serviciul...</option>
+                                <option value="personala">Consiliere personală (50 min)</option>
+                                <option value="criza">Situație de criză (90 min)</option>
+                                <option value="cuplu">Consiliere de cuplu (70 min)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Trimite Cererea</button>
+                    <div id="formFeedback" class="form-feedback"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Alina Mateș</h3>
+                <p>Consilier pentru Dezvoltare Personală</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61554120921375" target="_blank"
+                        aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/alina_mates_consiliere/" target="_blank"
+                        aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg></a>
+                    <a href="https://wa.me/+40724570927" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"
+                            width="20" height="20" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                        style="vertical-align: middle; margin-right: 5px;">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg> 0724 570 927</p>
+                <p><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                        style="vertical-align: middle; margin-right: 5px;">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg> <a href="mailto:hello@alinamates.ro">hello@alinamates.ro</a></p>
+                <a href="https://www.google.com/maps/@45.7415238,21.2353248,3a,75y,157.59h,91.13t/data=!3m7!1e1!3m5!1s1M60jvyRxO6DlOmtZOy5cA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.1287185976818677%26panoid%3D1M60jvyRxO6DlOmtZOy5cA%26yaw%3D157.58700230595477!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="footer-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"
+                        style="vertical-align: middle; margin-right: 5px;">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg> str. Memorandului, nr. 96, Timișoara
+                </a>
+            </div>
+            <div class="footer-col">
+                <h3>Link-uri Utile</h3>
+                <ul class="footer-links">
+                    <li><a href="termeni-si-conditii.html">Termeni și condiții</a></li>
+                    <li><a href="politica-de-confidentialitate.html">Politica de confidențialitate</a></li>
+                    <li><a href="Politica-Cookie.html">Politica Cookie</a></li>
+                    <li><a href="https://anpc.ro/">ANPC</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Alina Mates. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
