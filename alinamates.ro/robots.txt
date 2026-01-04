@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Disallow admin and private directories
-Disallow: /intrebari/
-
-# Sitemap location
-Sitemap: https://alinamates.ro/sitemap.xml
