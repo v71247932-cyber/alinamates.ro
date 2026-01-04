@@ -1882,3 +1882,51 @@ mark::after,
         font-size: 0.95rem;
     }
 }
+
+/* Question Form Styles */
+.qa-form-card {
+    background: var(--background-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--secondary-color);
+    text-align: center;
+}
+
+.qa-form-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.qa-form-subtitle {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.btn-question {
+    width: 100%;
+    padding: 15px;
+    margin-top: 1rem;
+}
+
+#userQuestion {
+    resize: none;
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid var(--secondary-color);
+    font-family: var(--font-body);
+}
+
+#userQuestion:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#questionFeedback {
+    margin-top: 1.5rem;
+    padding: 10px;
+    border-radius: 8px;
+}

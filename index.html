@@ -380,6 +380,17 @@
             <div class="qa-container">
                 <div class="qa-item">
                     <div class="qa-question">
+                        <strong>Anonim:</strong> Este obligatoriu sa-mi fac programare pe site? Am sunat dar nu mi-ati
+                        raspuns, probabil erati intr-o sedinta. Multumesc.
+                        <span class="qa-date">17 Iunie 2025</span>
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Nu, nu este obligatoriu dar este recomandat. Ma ajuta tocmai
+                        pentru perioadele cand sunt in sedinta.
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">
                         <strong>Anonim:</strong> Simt ca nu mai pot sa fac fata la tot ce se cere de la mine si sunt
                         epuizata. cum sa ma opresc fara sa dezamagesc?
                         <span class="qa-date">15 Ianuarie 2025</span>
@@ -459,6 +470,23 @@
             <div class="text-center" style="margin-top: 2rem;">
                 <button id="qa-load-more" class="btn btn-primary">Vezi mai mult</button>
                 <button id="qa-show-less" class="btn btn-primary" style="display: none;">Vezi mai puțin</button>
+            </div>
+
+            <div class="qa-form-container"
+                style="margin-top: 5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="qa-form-card">
+                    <h3 class="qa-form-title">Ai o întrebare?</h3>
+                    <p class="qa-form-subtitle">Dacă ai o curiozitate sau o situație despre care vrei să afli mai multe,
+                        scrie-ne aici și îți voi răspunde în cel mai scurt timp.</p>
+                    <form id="questionForm">
+                        <div class="form-group">
+                            <textarea id="userQuestion" name="question" class="form-control" rows="4"
+                                placeholder="Scrie întrebarea ta aici..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-question">Trimite întrebarea</button>
+                    </form>
+                    <div id="questionFeedback" class="form-feedback"></div>
+                </div>
             </div>
         </div>
     </section>
