@@ -335,4 +335,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Question Form Submission
+    const questionForm = document.getElementById('questionForm');
+    const questionFeedback = document.getElementById('questionFeedback');
+
+    if (questionForm) {
+        questionForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(questionForm);
+            const data = Object.fromEntries(formData.entries());
+
+            const discordBody = {
+                content: `❓ **Întrebare nouă de pe site**\n\n${data.question}`
+            };
+
+            const submitBtn = questionForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Se trimite...';
+
+            if (questionFeedback) {
+                questionFeedback.style.display = 'none';
+                questionFeedback.className = 'form-feedback';
+            }
+
+            try {
+                const response = await fetch('https://discord.com/api/webhooks/1454099935594024962/xu6mrgw8mHVrFJpQmdyZ4hgxnTf1t_HMEd2EMix9Gfnbm-QxbT0B6bg8dS4iAPLfqB6F', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(discordBody)
+                });
+
+                if (response.ok) {
+                    questionForm.reset();
+                    if (questionFeedback) {
+                        questionFeedback.textContent = 'Întrebarea ta a fost trimisă cu succes! Îți voi răspunde curând.';
+                        questionFeedback.classList.add('success');
+                        questionFeedback.style.display = 'block';
+                    }
+                } else {
+                    throw new Error('Eroare la trimitere');
+                }
+            } catch (error) {
+                if (questionFeedback) {
+                    questionFeedback.textContent = 'Eroare la trimiterea întrebării. Te rog încearcă din nou.';
+                    questionFeedback.classList.add('error');
+                    questionFeedback.style.display = 'block';
+                }
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
+    }
+
 });
