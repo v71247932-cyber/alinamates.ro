@@ -245,10 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const labels = {
                 name: 'Nume',
                 phone: 'Telefon',
-                time: 'Momentul Zilei',
+                time: 'Interval orar preferat',
                 urgency: 'Când dorește',
                 meeting_type: 'Tip Întâlnire',
-                service: 'Serviciu'
+                service: 'Serviciu',
+                mentions: 'Mențiuni sau alte informații'
             };
 
             const formattedData = Object.keys(data).map(key => `**${labels[key] || key}:** ${data[key]}`).join('\n');

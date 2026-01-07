@@ -376,7 +376,20 @@
             <p class="text-center" style="margin-bottom: 3rem; color: var(--text-secondary);">Răspunsuri la întrebări
                 primite de la clienți</p>
             <div class="qa-container">
-                <!-- 1: 27 Octombrie 2025 -->
+                <!-- 1: 20 Octombrie 2025 -->
+                <div class="qa-item">
+                    <div class="qa-question">
+                        <strong>Anonim:</strong> De cand sunt la facultate ma cert des cu parintii si nu mai reusim sa
+                        ne intelegem, simt ca ma sufoca. Ce pot face?
+                        <span class="qa-date">20 Octombrie 2025</span>
+                    </div>
+                    <div class="qa-answer">
+                        <strong>Alina Mates:</strong> Schimbarile aduse de perioada facultatii modifica mult relatia cu
+                        parintii, iar in consiliere pot fi discutate concret aceste tensiuni, pentru a intelege ce se
+                        intampla intre voi si cum poti gestiona mai clar situatiile.
+                    </div>
+                </div>
+                <!-- 2: 27 Octombrie 2025 -->
                 <div class="qa-item">
                     <div class="qa-question">
                         <strong>Anonim:</strong> Ma enervez rapid la serviciu si apoi imi pare rau, se poate lucra pe
@@ -388,7 +401,7 @@
                         reactiile tale, astfel incat sa gasesti variante mai echilibrate de a raspunde.
                     </div>
                 </div>
-                <!-- 2: 19 Februarie 2025 -->
+                <!-- 3: 19 Februarie 2025 -->
                 <div class="qa-item">
                     <div class="qa-question">
                         <strong>Anonim:</strong> Ma compar mereu cu alte femei si ma simt insuficienta, are rost sa vin
@@ -400,7 +413,7 @@
                         poate ajuta la construirea unei relatii mai blande cu tine.
                     </div>
                 </div>
-                <!-- 3: 17 Ianuarie 2025 -->
+                <!-- 4: 17 Ianuarie 2025 -->
                 <div class="qa-item">
                     <div class="qa-question">
                         <strong>Anonim:</strong> Dorm foarte prost de cateva luni si ma trezesc obosita, consilierea are
@@ -412,7 +425,7 @@
                         in sedinte se poate lucra exact pe gandurile si starile care iti tin mintea in alerta noaptea
                     </div>
                 </div>
-                <!-- 4: 17 Iunie 2025 -->
+                <!-- 5: 17 Iunie 2025 -->
                 <div class="qa-item">
                     <div class="qa-question">
                         <strong>Anonim:</strong> Este obligatoriu sa-mi fac programare pe site? Am sunat dar nu mi-ati
@@ -425,7 +438,7 @@
                     </div>
                 </div>
 
-                <!-- 5: 15 Februarie 2025 -->
+                <!-- 6: 15 Februarie 2025 -->
                 <div class="qa-item">
                     <div class="qa-question">
                         <strong>Anonim:</strong> Ma confrunt de ceva timp cu faptul ca sotia mea nu se intelege cu mama
@@ -548,11 +561,12 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="time">Momentul Zilei</label>
+                            <label for="time">Interval orar preferat</label>
                             <select id="time" name="time" class="form-control" required>
                                 <option value="" disabled selected>Alege...</option>
-                                <option value="dimineata">Prima parte a zilei</option>
-                                <option value="dupa-amiaza">A doua parte a zilei</option>
+                                <option value="Între orele 9–12">Între orele 9–12</option>
+                                <option value="Între orele 12–15">Între orele 12–15</option>
+                                <option value="Între orele 15–18">Între orele 15–18</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -577,11 +591,19 @@
                             <label for="service">Tipul de Consiliere</label>
                             <select id="service" name="service" class="form-control" required>
                                 <option value="" disabled selected>Alege serviciul...</option>
-                                <option value="personala">Consiliere personală (50 min)</option>
-                                <option value="criza">Situație de criză (90 min)</option>
-                                <option value="cuplu">Consiliere de cuplu (70 min)</option>
+                                <option value="Consiliere personală (50 min) - 150 RON">Consiliere personală (50 min) -
+                                    150 RON</option>
+                                <option value="Situație de criză (90 min) - 250 RON">Situație de criză (90 min) - 250
+                                    RON</option>
+                                <option value="Consiliere de cuplu (70 min) - 200 RON">Consiliere de cuplu (70 min) -
+                                    200 RON</option>
                             </select>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentions">Mențiuni sau alte informații (opțional):</label>
+                        <textarea id="mentions" name="mentions" class="form-control" rows="3"
+                            placeholder="Scrie aici..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Trimite Cererea</button>
                     <div id="formFeedback" class="form-feedback"></div>
