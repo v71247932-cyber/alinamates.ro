@@ -211,7 +211,7 @@
 
                 <!-- 4. Starea generala -->
                 <div class="question-group">
-                    <label class="question-title">4. Cum ai descrie starea generală în ultima perioadă?</label>
+                    <label class="question-title">4. Cum ai descrie starea ta generală din ultima perioadă?</label>
                     <div class="options-list">
                         <label class="option-item"><input type="radio" name="q4_stare" value="Foarte bună">
                             Foarte bună</label>
@@ -257,15 +257,9 @@
                 </div>
 
                 <!-- 9. Asteptari -->
+                <!-- 9. Resurse -->
                 <div class="question-group">
-                    <label class="question-title">9. Ce așteptări ai de la consilier și de la procesul de
-                        consiliere?</label>
-                    <textarea name="q10_asteptari" class="form-control-text" placeholder="Răspunsul tău..."></textarea>
-                </div>
-
-                <!-- 10. Resurse -->
-                <div class="question-group">
-                    <label class="question-title">10. Ai persoane de sprijin în viața ta (familie, prieteni)?</label>
+                    <label class="question-title">9. Ai persoane de sprijin în viața ta (familie, prieteni)?</label>
                     <div class="options-list">
                         <label class="option-item"><input type="radio" name="q11_sprijin" value="Da">
                             Da</label>
@@ -275,11 +269,13 @@
                     </div>
                 </div>
 
-                <!-- 11. Ce a ajutat -->
+                <!-- 10. Asteptari -->
                 <div class="question-group">
-                    <label class="question-title">11. Ce te-a ajutat până acum să faci față dificultăților?</label>
-                    <textarea name="q12_ajutor" class="form-control-text" placeholder="Răspunsul tău..."></textarea>
+                    <label class="question-title">10. Ce așteptări ai de la consilier și de la procesul de
+                        consiliere?</label>
+                    <textarea name="q10_asteptari" class="form-control-text" placeholder="Răspunsul tău..."></textarea>
                 </div>
+
 
                 <div id="questFeedback" class="form-feedback" style="display: none; margin-bottom: 20px;"></div>
 
@@ -394,14 +390,13 @@
                         q2_dificultati: "2. Dificultăți",
                         q2_alte_dificultati: "2b. Alte dificultăți",
                         q3_durata: "3. Durată difficulties",
-                        q4_stare: "4. Stare generală",
+                        q4_stare: "4. Stare ta generală",
                         q6_anterior: "5. Experiență anterioară",
                         q7_experienta_detalii: "6. Detalii exp. anterioară",
                         q8_obiective: "7. Obiective",
                         q9_semn: "8. Semn îmbunătățire",
-                        q10_asteptari: "9. Așteptări",
-                        q11_sprijin: "10. Persoane sprijin",
-                        q12_ajutor: "11. Ce a ajutat"
+                        q11_sprijin: "9. Persoane sprijin",
+                        q10_asteptari: "10. Așteptări"
                     };
 
                     for (const [key, label] of Object.entries(questionLabels)) {
