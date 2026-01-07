@@ -276,7 +276,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     appointmentForm.reset();
                     if (formFeedback) {
-                        formFeedback.textContent = 'Mulțumesc! Solicitarea ta a fost trimisă. Te voi contacta în curând.';
+                        formFeedback.innerHTML = `
+                            <p>Mulțumesc! Solicitarea ta a fost trimisă. Te voi contacta în curând.</p>
+                            <div style="margin-top: 20px;">
+                                <p>Pentru a mă ajuta să pregătesc prima noastră întâlnire, te invit să completezi un scurt chestionar (opțional):</p>
+                                <a href="Chestionar/index.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Completează chestionarul (opțional)</a>
+                            </div>
+                        `;
                         formFeedback.classList.add('success');
                         formFeedback.style.display = 'block';
                         formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
