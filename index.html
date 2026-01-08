@@ -45,9 +45,7 @@
         content="Consiliere personală, de cuplu și situații de criză în Timișoara și online.">
     <meta name="twitter:image" content="https://alinamates.ro/assets/portrait.jpg">
 
-    <!-- Fonts -->
-    <link rel="stylesheet">
-
+    <link rel="preload" as="image" href="assets/portrait.jpg" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
 
     <!-- Structured Data (JSON-LD) -->
@@ -189,7 +187,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero-custom">
         <div class="hero-bg"></div>
-        <img src="assets/portrait.jpg" class="hero-bg-mobile" alt="Alina Mates">
+        <img src="assets/portrait.jpg" class="hero-bg-mobile" alt="Alina Mates" fetchpriority="high">
 
         <div class="container hero-content-layer">
             <div class="hero-text-container">
