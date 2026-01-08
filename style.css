@@ -1,3 +1,112 @@
+/* Fonts */
+/* montserrat-300 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    src: url('assets/fonts/montserrat-v31-latin-300.woff2') format('woff2');
+}
+
+/* montserrat-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+}
+
+/* montserrat-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('assets/fonts/montserrat-v31-latin-500.woff2') format('woff2');
+}
+
+/* montserrat-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: url('assets/fonts/montserrat-v31-latin-600.woff2') format('woff2');
+}
+
+/* montserrat-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/montserrat-v31-latin-700.woff2') format('woff2');
+}
+
+/* dancing-script-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/dancing-script-v29-latin-regular.woff2') format('woff2');
+}
+
+/* dancing-script-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 500;
+    src: url('assets/fonts/dancing-script-v29-latin-500.woff2') format('woff2');
+}
+
+/* dancing-script-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 600;
+    src: url('assets/fonts/dancing-script-v29-latin-600.woff2') format('woff2');
+}
+
+/* dancing-script-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Dancing Script';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/dancing-script-v29-latin-700.woff2') format('woff2');
+}
+
+/* playfair-display-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+}
+
+/* playfair-display-italic - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    src: url('assets/fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+}
+
+/* playfair-display-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    src: url('assets/fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+}
+
 /* Global Styles */
 :root {
     --primary-color: #445c27;
