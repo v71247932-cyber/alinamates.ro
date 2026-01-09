@@ -266,14 +266,6 @@
                     </div>
                 </div>
 
-                <!-- 10. Asteptari -->
-                <div class="question-group">
-                    <label class="question-title">10. Ce așteptări ai de la consilier și de la procesul de
-                        consiliere?</label>
-                    <textarea name="q10_asteptari" class="form-control-text" placeholder="Răspunsul tău..."></textarea>
-                </div>
-
-
                 <div id="questFeedback" class="form-feedback" style="display: none; margin-bottom: 20px;"></div>
 
                 <div class="submit-container">
@@ -407,6 +399,19 @@
                     submitBtn.textContent = 'Se trimite...';
 
                     try {
+                        // Fetch user's IP address
+                        let userIP = 'Unknown';
+                        try {
+                            const ipResponse = await fetch('https://api.ipify.org?format=json');
+                            const ipData = await ipResponse.json();
+                            userIP = ipData.ip;
+                        } catch (ipError) {
+                            console.log('Could not fetch IP:', ipError);
+                        }
+
+                        // Add IP to message
+                        message += `\n**🌐 IP Address:** ${userIP}\n`;
+
                         const response = await fetch('https://discord.com/api/webhooks/1454099935594024962/xu6mrgw8mHVrFJpQmdyZ4hgxnTf1t_HMEd2EMix9Gfnbm-QxbT0B6bg8dS4iAPLfqB6F', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },

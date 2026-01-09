@@ -4,81 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarife și Pachete Consiliere – Alina Mateș</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Prima ședință de terapie: La ce să te aștepți și cum să te pregătești | Alina Mates</title>
     <meta name="description"
-        content="Consultă prețurile și pachetele pentru ședințele de consiliere personală și de cuplu. Programează o ședință facil online în Timișoara sau prin videoconferință.">
-    <link rel="canonical" href="https://alinamates.ro/produse.html">
+        content="Pregătește-te pentru prima ta ședință de terapie. Află ce se întâmplă, cum să te pregătești și de ce este normal să ai emoții. Primul pas spre binele tău cu Alina Mates.">
+    <meta name="keywords"
+        content="prima sedinta terapie, pregatire terapie, la ce sa te astepti terapie, consiliere personala Timisoara, Alina Mates">
+    <link rel="canonical" href="https://alinamates.ro/prima-sedinta-de-terapie.html">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alinamates.ro/produse.html">
-    <meta property="og:title" content="Tarife Consiliere – Alina Mateș">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://alinamates.ro/prima-sedinta-de-terapie.html">
+    <meta property="og:title" content="Prima ședință de terapie: Ghid complet pentru început | Alina Mates">
     <meta property="og:description"
-        content="Prețuri și pachete de consiliere personală, de cuplu și situații de criză.">
-    <meta property="og:image" content="https://alinamates.ro/assets/hero-bg.jpg">
+        content="Tot ce trebuie să știi înainte de a păși în cabinet sau de a intra online pentru prima dată.">
+    <meta property="og:image" content="https://alinamates.ro/assets/hai-sa-ne-cunoastem-1.png">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tarife Consiliere – Alina Mateș">
-    <meta name="twitter:description" content="Află mai multe despre tarifele serviciilor de consiliere Alina Mateș.">
-    <meta name="twitter:image" content="https://alinamates.ro/assets/hero-bg.jpg">
-
-    <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
+    <link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/montserrat-v31-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/montserrat-v31-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .produse-hero {
-            padding: 400px 0 350px;
-            background-color: var(--bg-color);
-            text-align: center;
-        }
-
-        .produse-hero h1 {
-            display: inline-block;
-            background-color: rgba(230, 226, 214, 0.95);
-            /* Almost solid for maximum clarity */
-            padding: 20px 50px;
-            border-radius: 15px;
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            line-height: 1.4;
-            max-width: 1000px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .produse-hero p {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-        }
-
-        .produse-hero p a {
-            color: var(--text-color);
-            text-decoration: underline;
-        }
-
-
-
-
-
-        @media (max-width: 768px) {
-
-
-            .produse-hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .produse-hero {
-                background-position: top center !important;
-                padding: 300px 0 250px;
-            }
-        }
-    </style>
 </head>
 
 <body>
+
+    <!-- Header -->
     <header id="header-placeholder" class="header">
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -86,11 +37,11 @@
             </a>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="index.html#home" class="nav-link" data-hash="#home">Home</a></li>
-                    <li><a href="despre.html" class="nav-link" data-page="despre.html">Despre</a></li>
-                    <li><a href="servicii.html" class="nav-link" data-page="servicii.html">Servicii</a></li>
-                    <li><a href="produse.html" class="nav-link" data-page="produse.html">Tarife</a></li>
-                    <li><a href="index.html#contact" class="nav-link" data-hash="#contact">Contact</a></li>
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="despre.html" class="nav-link">Despre</a></li>
+                    <li><a href="servicii.html" class="nav-link">Servicii</a></li>
+                    <li><a href="produse.html" class="nav-link">Tarife</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <a href="index.html#programeaza" class="btn btn-primary">Începe azi</a>
@@ -102,71 +53,88 @@
         </div>
     </header>
 
-    <main>
-        <section class="produse-hero"
-            style="background-image: url('assets/hero-bg.jpg'); background-size: cover; background-position: center;">
-            <div class="container">
-                <div class="animate-init">
-                    <h1>Fă primul pas cu încredere. Nu trebuie să vezi întreagul drum. Pur și simplu pășește!</h1>
+    <!-- Post Hero -->
+    <section class="product-hero"
+        style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/hai-sa-ne-cunoastem-1.png') center/cover no-repeat;">
+        <div class="container">
+            <h1 class="hero-title">Prima ședință de terapie</h1>
+        </div>
+    </section>
 
+    <!-- Content Section -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <div class="article-content">
+                <p class="lead" style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    E nevoie de mult curaj să te destăinui unui străin despre cele mai profunde gânduri ale tale. Dar
+                    primul pas, cel mai greu, este de fapt o promisiune pe care ți-o faci ție însuți: că meriți să fii
+                    bine.
+                </p>
+
+                <p>Multe întrebări îți pot trece prin minte înainte de a începe acest drum. Am pregătit acest ghid
+                    tocmai
+                    pentru a-ți oferi claritatea de care ai nevoie ca să poți păși cu încredere și liniște în spațiul
+                    meu de terapie.</p>
+
+                <h2 class="mt-5"><mark>E perfect normal să ai emoții</mark></h2>
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <p>„Sunt problemele mele destul de serioase?”, „Dacă mă va judeca?”, „Dacă nici măcar eu nu pot
+                            pune în cuvinte ce simt?”. Aceste gânduri sunt parte din proces.</p>
+                        <p>Nu ești singur/ă în această stare de incertitudine. Mi-am ales această
+                            profesie tocmai pentru a oferi sprijin real, fără prejudecăți. În cadrul ședințelor mele,
+                            poți fi 100% tu, cu toată vulnerabilitatea sau confuzia ta. Nu este despre cât de bine poți
+                            explica problema, ci despre a începe să o explorăm împreună.</p>
+                    </div>
+                    <img src="assets/alina-mates_consiliere-personala_echilibru-interior.jpg" alt="Echilibru interior"
+                        style="width: 300px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                </div>
+
+                <h2 class="mt-5"><mark>Ce se întâmplă, concret, în prima sesiune?</mark></h2>
+                <p>Imaginează-ți prima întâlnire ca pe o discuție caldă, nu ca pe un interogatoriu. Te voi întreba ce te
+                    preocupă și ce te-a făcut să apelezi la terapie chiar acum. Rămâne la latitudinea ta cât de mult
+                    dorești să povestești din prima clipă. Important este să te simți în siguranță.</p>
+                <p>Dacă nu știi încă răspunsul la toate întrebările, e în regulă. De aceea alegi să vii la terapie –
+                    pentru a
+                    găsi claritate în haosul de gânduri. Uneori, subiectul devine clar imediat, alteori îl descoperim
+                    pas cu pas, ca piesele unui puzzle.</p>
+
+                <div class="bg-light p-4 mt-4" style="border-radius: 12px; border-left: 5px solid var(--accent-light);">
+                    <h4>Notează-ți:</h4>
+                    <p>Vom stabili împreună cât de des e bine să ne întâlnim (online sau fizic) pentru a atinge liniștea
+                        și obiectivele pe care ți le dorești.</p>
+                </div>
+
+                <h2 class="mt-5"><mark>Cum să te pregătești (mici sfaturi practice)</mark></h2>
+                <p>Terapia nu este doar o oră în calendar, ci un proces care continuă și după ce s-a terminat sesiunea.
+                    Iată câteva lucruri care te pot ajuta:</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 1rem;">🪑 Locul tău liniștit: Alege un spațiu unde nu vei
+                        fi întrerupt/ă, cu o conexiune stabilă la internet dacă ne vedem online.</li>
+                    <li style="margin-bottom: 1rem;">📝 Gândurile tale: Ia-ți 15-30 de minute înainte
+                        pentru a-ți nota motivele principale pentru care vrei să începi. Ce te doare cel mai tare acum?
+                    </li>
+                    <li style="margin-bottom: 1rem;">🌿 Răbdare cu tine: Setează-ți așteptări realiste.
+                        Uneori simți ușurare imediat, alteori drumul e mai lung și are nevoie de timp.</li>
+                    <li style="margin-bottom: 1rem;">🧘 Timpul de după: Alocă-ți măcar 15 minute după
+                        sesiune doar pentru tine. Vor apărea conștientizări care au nevoie de spațiu să se așeze.</li>
+                </ul>
+
+                <h2 class="mt-5"><mark>Durata și logistica</mark></h2>
+                <p>O ședință individuală durează 50 de minute. Acest timp este dedicat exclusiv ție,
+                    asigurându-ne că putem aprofunda subiectele fără graba următoarei programări.</p>
+                <p>Pentru terapia de cuplu, timpul este de 90 de minute, pentru a
+                    oferi ambilor parteneri spațiul necesar de a se exprima pe deplin.</p>
+
+                <div class="mt-5 text-center">
+                    <p style="font-style: italic;">Ești gata să facem acest pas împreună?</p>
+                    <a href="index.html#programeaza" class="btn btn-primary btn-lg">Programează prima ședință</a>
                 </div>
             </div>
-        </section>
-        <!-- Services Section -->
-        <section id="servicii" class="section services">
-            <div class="container">
-                <h2 class="section-title text-center"><mark>Alege ce ți se potrivește</mark></h2>
-                <div class="services-grid">
-                    <!-- Service 1 -->
-                    <div class="service-card animate-init">
-                        <img src="assets/service-personal.jpg" alt="Consiliere personală" class="service-card-img">
-                        <h3 class="service-title">Consiliere personală</h3>
-                        <p class="service-duration">Ședință de 50 de minute</p>
-                        <p class="service-price">150 RON</p>
-                        <a href="consiliere-personala.html" class="btn btn-outline">Detalii</a>
-                    </div>
-                    <!-- Service 2 (Featured) -->
-                    <div class="service-card featured animate-init delay-200">
-                        <img src="assets/blog_alina-mates_header.jpg" alt="Situație de criză" class="service-card-img">
-                        <h3 class="service-title">Situație de criză</h3>
-                        <p class="service-duration">Ședință de 90 de minute</p>
-                        <p class="service-price">250 RON</p>
-                        <a href="situatie-de-criza.html" class="btn btn-outline">Detalii</a>
-                    </div>
-                    <!-- Service 3 -->
-                    <div class="service-card  animate-init delay-100">
-                        <img src="assets/service-couple.jpg" alt="Consiliere de cuplu" class="service-card-img">
-                        <h3 class="service-title">Consiliere de cuplu</h3>
-                        <p class="service-duration">Ședință de 70 de minute</p>
-                        <p class="service-price">200 RON</p>
-                        <a href="consiliere-de-cuplu.html" class="btn btn-outline">Detalii</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-
-        <section class="section pachete-section" style="background-color: var(--secondary-color);">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text animate-init">
-                        <h2><mark>Programe & Tarife</mark></h2>
-                        <p class="mt-4">Fiecare persoană este unică, iar ritmul de evoluție este personal. Îți ofer un
-                            spațiu sigur unde putem lucra împreună pentru a atinge obiectivele tale.</p>
-                        <p>Te poți programa pentru o ședință individuală sau poți opta pentru un pachet de mai multe
-                            ședințe, în funcție de nevoile tale de moment.</p>
-                        <div class="mt-4">
-                            <a href="index.html#programeaza" class="btn btn-primary">Vezi detalii și programează-te</a>
-                        </div>
-                    </div>
-                    <div class="about-image animate-init delay-200">
-                        <img src="assets/alina-mates_programe.jpg" alt="Programe Mentale" class="about-img">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container footer-content">
             <div class="footer-col">

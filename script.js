@@ -253,9 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const formattedData = Object.keys(data).map(key => `**${labels[key] || key}:** ${data[key]}`).join('\n');
-            const discordBody = {
-                content: `🚀 **Solicitare nouă de programare**\n\n${formattedData}`
-            };
 
             const submitBtn = appointmentForm.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
@@ -267,6 +264,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
+                // Fetch user's IP address
+                let userIP = 'Unknown';
+                try {
+                    const ipResponse = await fetch('https://api.ipify.org?format=json');
+                    const ipData = await ipResponse.json();
+                    userIP = ipData.ip;
+                } catch (ipError) {
+                    console.log('Could not fetch IP:', ipError);
+                }
+
+                // Add IP to the formatted data
+                const formattedDataWithIP = formattedData + `\n**🌐 IP Address:** ${userIP}`;
+                const discordBody = {
+                    content: `🚀 **Solicitare nouă de programare**\n\n${formattedDataWithIP}`
+                };
+
                 const response = await fetch('https://discord.com/api/webhooks/1454099935594024962/xu6mrgw8mHVrFJpQmdyZ4hgxnTf1t_HMEd2EMix9Gfnbm-QxbT0B6bg8dS4iAPLfqB6F', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -274,18 +287,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    appointmentForm.reset();
                     if (formFeedback) {
-                        formFeedback.innerHTML = `
-                            <p>Mulțumesc! Solicitarea ta a fost trimisă. Te voi contacta în curând.</p>
-                            <div style="margin-top: 20px;">
-                                <p>Pentru a mă ajuta să pregătesc prima noastră întâlnire, te invit să completezi un scurt chestionar (opțional):</p>
-                                <a href="Chestionar/index.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Completează chestionarul (opțional)</a>
-                            </div>
-                        `;
-                        formFeedback.classList.add('success');
-                        formFeedback.style.display = 'block';
-                        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        // Check if we are on the incepe.html page to redirect to Step 2
+                        const isIncepePage = window.location.pathname.includes('incepe.html');
+
+                        if (isIncepePage) {
+                            appointmentForm.style.opacity = '0';
+                            setTimeout(() => {
+                                appointmentForm.innerHTML = `
+                                    <div class="form-feedback success" style="display: block;">
+                                        <h3 style="color: #445c27; margin-bottom: 15px;">Solicitare Trimisă!</h3>
+                                        <p>Mulțumesc! Solicitarea ta a fost primită. Te redirecționăm acum către următoarea etapă...</p>
+                                    </div>
+                                `;
+                                appointmentForm.style.opacity = '1';
+
+                                // Redirect to Step 3 (Questionnaire section) after 2 seconds
+                                setTimeout(() => {
+                                    window.location.href = '#questionnaire-step';
+                                }, 2000);
+                            }, 300);
+                        } else {
+                            // Default success behavior for index.html or other pages
+                            appointmentForm.style.opacity = '0';
+                            setTimeout(() => {
+                                appointmentForm.innerHTML = `
+                                    <div class="form-feedback success" style="display: block;">
+                                        <h3 style="color: #445c27; margin-bottom: 15px;">Solicitare Trimisă!</h3>
+                                        <p>Mulțumesc! Solicitarea ta a fost trimisă cu succes. Te voi contacta în cel mai scurt timp pentru a stabili detaliile.</p>
+                                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+                                        <p style="font-size: 0.95rem;">Pentru a mă ajuta să pregătesc prima noastră întâlnire, te invit să completezi un scurt chestionar (opțional):</p>
+                                        <a href="Chestionar/index.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Completează chestionarul</a>
+                                    </div>
+                                `;
+                                appointmentForm.style.opacity = '1';
+                            }, 300);
+                        }
                     }
                 } else {
                     throw new Error('Eroare la trimitere');

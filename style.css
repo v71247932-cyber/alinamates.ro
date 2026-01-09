@@ -1,47 +1,46 @@
-/* Fonts */
-/* montserrat-300 - latin */
 @font-face {
     font-display: swap;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 300;
-    src: url('assets/fonts/montserrat-v31-latin-300.woff2') format('woff2');
+    src: url('assets/fonts/montserrat.woff2') format('woff2'),
+        url('assets/fonts/montserrat-v31-latin-300.woff2') format('woff2');
 }
 
-/* montserrat-regular - latin */
 @font-face {
     font-display: swap;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    src: url('assets/fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+    src: url('assets/fonts/montserrat.woff2') format('woff2'),
+        url('assets/fonts/montserrat-v31-latin-regular.woff2') format('woff2');
 }
 
-/* montserrat-500 - latin */
 @font-face {
     font-display: swap;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    src: url('assets/fonts/montserrat-v31-latin-500.woff2') format('woff2');
+    src: url('assets/fonts/montserrat.woff2') format('woff2'),
+        url('assets/fonts/montserrat-v31-latin-500.woff2') format('woff2');
 }
 
-/* montserrat-600 - latin */
 @font-face {
     font-display: swap;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    src: url('assets/fonts/montserrat-v31-latin-600.woff2') format('woff2');
+    src: url('assets/fonts/montserrat.woff2') format('woff2'),
+        url('assets/fonts/montserrat-v31-latin-600.woff2') format('woff2');
 }
 
-/* montserrat-700 - latin */
 @font-face {
     font-display: swap;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    src: url('assets/fonts/montserrat-v31-latin-700.woff2') format('woff2');
+    src: url('assets/fonts/montserrat.woff2') format('woff2'),
+        url('assets/fonts/montserrat-v31-latin-700.woff2') format('woff2');
 }
 
 /* dancing-script-regular - latin */
@@ -210,7 +209,7 @@ img {
 .btn-primary {
     background-color: #445c27;
     color: var(--background-white);
-    padding: 6px 10px;
+    padding: 10px 25px;
 }
 
 .btn-primary:hover {
@@ -541,6 +540,12 @@ img {
     text-align: center;
     transition: var(--transition);
     border: 1px solid var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .btn {
+    margin-top: auto;
 }
 
 .service-card:hover {
@@ -1834,6 +1839,12 @@ mark::after,
         order: -1;
         /* Image first on mobile usually looks good, or remove to keep text first */
     }
+
+    .header .btn-primary {
+        font-size: 11px;
+        padding: 5px 12px;
+        white-space: nowrap;
+    }
 }
 
 .mb-4 {
@@ -2043,4 +2054,109 @@ mark::after,
     margin-top: 1.5rem;
     padding: 10px;
     border-radius: 8px;
+}
+
+.form-feedback {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.form-feedback.success {
+    display: block;
+    background-color: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.form-feedback.error {
+    display: block;
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.form-feedback p {
+    margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Cine sunt vs Cine nu sunt Section */
+.comparison-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.comparison-header h2 {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    padding: 10px 40px;
+    border-radius: 12px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.comparison-col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.comparison-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comparison-col ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.comparison-col ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.comparison-col strong {
+    display: block;
+    margin: 20px 0 10px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
