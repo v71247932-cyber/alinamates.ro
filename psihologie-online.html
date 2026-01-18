@@ -34,9 +34,9 @@
                 console.log('City-based Redirection: Detected city:', city, '-> Normalized:', normalizedCity);
 
                 const isTimisoara = normalizedCity === 'timisoara';
-                if (!isTimisoara) {
-                    console.log('City-based Redirection: Redirecting to psihologie-online.html');
-                    window.location.replace('/psihologie-online.html');
+                if (isTimisoara) {
+                    console.log('City-based Redirection: Redirecting to index.html');
+                    window.location.replace('/index.html');
                 }
             };
 
@@ -54,29 +54,28 @@
     </script>
 
     <!-- SEO Meta Tags -->
-    <title>Alina Mates – Consiliere Personală și de Cuplu Timișoara | Online</title>
+    <title>Alina Mates – Consiliere Psihologică Online | Personală și de Cuplu</title>
     <meta name="description"
-        content="Consiliere personală, de cuplu și situații de criză în Timișoara și online. Descoperă-ți potențialul și construiește o viață plină de sens cu Alina Mates, consilier profesionist.">
+        content="Consiliere psihologică online, personală și de cuplu. Descoperă-ți potențialul și construiește o viață plină de sens cu Alina Mates, consilier profesionist, oriunde te-ai afla.">
     <meta name="keywords"
-        content="consiliere personală Timișoara, consiliere de cuplu Timișoara, consilier psihologic online, psihoterapeut Timișoara, consiliere criză">
+        content="consilier psihologic online, consiliere online, terapie online, consiliere personală online, consiliere de cuplu online">
     <meta name="author" content="Alina Mates">
-    <link rel="canonical" href="https://alinamates.ro/">
+    <link rel="canonical" href="https://alinamates.ro/psihologie-online.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alinamates.ro/">
-    <meta property="og:title" content="Alina Mates – Consiliere Personală și de Cuplu Timișoara">
+    <meta property="og:url" content="https://alinamates.ro/psihologie-online.html">
+    <meta property="og:title" content="Alina Mates – Consiliere Psihologică Online">
     <meta property="og:description"
-        content="Consiliere personală, de cuplu și situații de criză în Timișoara și online. Descoperă-ți potențialul cu Alina Mates.">
+        content="Consiliere psihologică online, personală și de cuplu. Descoperă-ți potențialul cu Alina Mates.">
     <meta property="og:image" content="https://alinamates.ro/assets/portrait.jpg">
     <meta property="og:locale" content="ro_RO">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://alinamates.ro/">
-    <meta name="twitter:title" content="Alina Mates – Consiliere Personală și de Cuplu Timișoara">
-    <meta name="twitter:description"
-        content="Consiliere personală, de cuplu și situații de criză în Timișoara și online.">
+    <meta name="twitter:url" content="https://alinamates.ro/psihologie-online.html">
+    <meta name="twitter:title" content="Alina Mates – Consiliere Psihologică Online">
+    <meta name="twitter:description" content="Consiliere psihologică online, personală și de cuplu oriunde te-ai afla.">
     <meta name="twitter:image" content="https://alinamates.ro/assets/portrait.jpg">
 
     <link rel="preload" as="image" href="assets/portrait.jpg" fetchpriority="high">
@@ -423,7 +422,7 @@
                 <!-- New: 11 Ianuarie 2026 -->
                 <div class="qa-item">
                     <div class="qa-question">
-                        <strong>Anonim:</strong> Jobul ma copleseste si nu mai fac fata.
+                        <strong>Anonim:</strong> Jobul ma copleseste si nu mai fac fata, se poate face ceva?
                         <span class="qa-date">11 Ianuarie 2026</span>
                     </div>
                     <div class="qa-answer">
