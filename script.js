@@ -319,7 +319,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <p style="font-size: 0.95rem;">Pentru a mă ajuta să pregătesc prima noastră întâlnire, te invit să completezi un scurt chestionar (opțional):</p>
                                         <a href="Chestionar/index.html" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">Completează chestionarul</a>
                                     </div>
+                                    <!-- Event snippet for Page view conversion page -->
                                 `;
+                                if (typeof gtag !== 'undefined') {
+                                    gtag('event', 'conversion', { 'send_to': 'AW-17020203268/UndSCPfzursaEITi7rM_', 'value': 1.0, 'currency': 'RON' });
+                                }
                                 appointmentForm.style.opacity = '1';
                             }, 300);
                         }

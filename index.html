@@ -18,41 +18,10 @@
             }
         })();
 
-        // City-based Redirection
-        (function () {
-            const params = new URLSearchParams(window.location.search);
-            if (params.get('reset_geo')) sessionStorage.removeItem('geo_redirect_checked');
-
-            if (sessionStorage.getItem('geo_redirect_checked')) return;
-
-            window.handleGeoIP = function (data) {
-                console.log('City-based Redirection: Data received:', data);
-                sessionStorage.setItem('geo_redirect_checked', 'true');
-
-                const city = data.city || (data.location && data.location.city) || "";
-                const normalizedCity = city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                console.log('City-based Redirection: Detected city:', city, '-> Normalized:', normalizedCity);
-
-                const isTimisoara = normalizedCity === 'timisoara';
-                if (!isTimisoara) {
-                    console.log('City-based Redirection: Redirecting to psihologie-online.html');
-                    window.location.replace('/psihologie-online.html');
-                }
-            };
-
-            // Use JSONP to bypass some fetch restrictions in Tor/VPN browsers
-            const script = document.createElement('script');
-            script.src = 'https://ipapi.co/jsonp/?callback=handleGeoIP';
-            script.onerror = function () {
-                console.warn('City-based Redirection: ipapi.co failed, trying fallback...');
-                const fallbackScript = document.createElement('script');
-                fallbackScript.src = 'https://ipwho.is/?callback=handleGeoIP';
-                document.head.appendChild(fallbackScript);
-            };
-            document.head.appendChild(script);
-        })();
     </script>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17020203268"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'AW-17020203268'); </script>
     <!-- SEO Meta Tags -->
     <title>Alina Mates – Consiliere Personală și de Cuplu Timișoara | Online</title>
     <meta name="description"
