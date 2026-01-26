@@ -491,7 +491,8 @@ img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    background: none;
 }
 
 .about p {
@@ -1208,6 +1209,8 @@ select {
 
 .product-image img {
     width: 100%;
+    box-shadow: none;
+    background: none;
 }
 
 .product-info .price {
@@ -2096,6 +2099,7 @@ mark::after,
         transform: translateY(0);
     }
 }
+
 /* Cine sunt vs Cine nu sunt Section */
 .comparison-section {
     padding: 80px 0;
