@@ -176,7 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const trigger = document.createElement('div');
             trigger.classList.add('custom-select-trigger');
-            trigger.textContent = select.options[select.selectedIndex].text || 'Alege...';
+            const triggerLabel = document.createElement('span');
+            triggerLabel.classList.add('trigger-label');
+            triggerLabel.textContent = select.options[select.selectedIndex].text || 'Alege...';
+            trigger.appendChild(triggerLabel);
             customSelect.appendChild(trigger);
 
             const options = document.createElement('div');
@@ -197,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 customOption.addEventListener('click', () => {
                     select.value = option.value;
                     select.dispatchEvent(new Event('change')); // Trigger change event for listeners
-                    trigger.textContent = option.text;
+                    triggerLabel.textContent = option.text;
 
                     customSelect.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
                     customOption.classList.add('selected');
